@@ -1,0 +1,36 @@
+<div class="row marketing">
+  <div class="col-lg-4" id="to_devour">
+    <h4> You can Eat Any of These </h4>
+    {{#each burgers}} {{#unless this.devoured}}
+    <form action="/{{this.id}}?_method=PUT" method="POST">
+      <input type="text" class="form-control" name="burger" value="{{this.id}}. {{this.burger_name}}">
+      <button type="submit" class="btn btn-info">EAT!</button>
+    </form>
+    {{/unless}} {{/each}}
+  </div>
+
+  <div class="col-lg-4">
+    <div class="thumbnail">
+      <h4> Enter A Burger You Would Like to EAT </h4>
+      <form class="form-inline" action="/" method="post">
+        <div class="form-group">
+          <label class="sr-only" for="burger_name"></label>
+          <div class="input-group">
+            <div class="input-group-addon "><span class="glyphicon glyphicon-xbt"></span></div>
+            <input type="text" class="form-control" id="burger_name" placeholder="Burger name" name="burger_name">
+            <div class="input-group-addon"></div>
+          </div>
+        </div>
+        </p>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-lg-4" id="devoured">
+      <h4>Burgers You Already Ate </h4>
+    {{#each burgers}} {{#if this.devoured}}
+      <input type="text" class="form-control" name="burger" value="{{this.id}}. {{this.burger_name}}" readonly>
+    {{/if}} {{/each}}
+  </div>
+</div>
+</div>
