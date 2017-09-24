@@ -4,7 +4,7 @@ var methodOverride = require("method-override");
 
 var exphbs = require("express-handlebars");
 var app = express();
-var port = 8080;
+var port = process.env.PORT || 8080;
 
 // Parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({

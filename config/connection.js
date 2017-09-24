@@ -7,9 +7,9 @@ else{
     var connection = mysql.createConnection({
         port: 3306,
         host: "localhost",
-        user: 'mda1oialp0b4eda3',
+        user: 'desmond',
         database: "burgers_db",
-        password: 'eqzdvjxc1khlrlxu'
+        password: 'desmond$$41'
     });
 
 }
